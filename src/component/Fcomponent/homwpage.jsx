@@ -1,4 +1,4 @@
-import Product from './Fcomponent/Fproduct';
+import Product from './Fproduct';
 
 const Master = () => {
     return (<>
@@ -6,15 +6,7 @@ const Master = () => {
         <Product productName='pc' />
         <Product productName='phon' />
         <Product productName='ic' />
-
-
-
     </>);
 }
 
-export default Master; <>
-
-
-
-
-</>
+export default Master;
