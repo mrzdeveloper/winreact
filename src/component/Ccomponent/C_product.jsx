@@ -1,20 +1,20 @@
 import { Component } from 'react';
-import '../styles/style.css'
 
 class Product extends Component {
     state = {
-        count: 0,
-        productname: 'laptop'
+        count: this.props.count,
     }
     render() {
+        const [ productName ] = this.props;
         return (<>
             <div className=''>
 
-                <span className='m-2 '>{this.state.productname}</span>
-                <span className='m-2'>{this.state.count}</span>
+                <span className='m-2 '>{productName}</span>
+                <span className='m-2'>{this.format()}</span>
                 <button onClick={this.increse} className='m-2 btn btn-s btn-primary'>+</button>
                 <button onClick={this.decrese} className='m-2 btn btn-s btn-secondary'>-</button>
                 <button onClick={() => { this.delete(55) }} className='m-2 btn btn-s btn-danger'>delet</button>
+                {this.props.children}
             </div>
         </>);
     }
@@ -25,7 +25,7 @@ class Product extends Component {
     decrese = () => {
 
     }
-    delete = (itemid) => {
+    delete = () => {
     }
     format = () => {
         if (this.state.count === 0) {
